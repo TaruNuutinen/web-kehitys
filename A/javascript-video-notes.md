@@ -34,4 +34,13 @@
     * Linebreaks \n
 14. Demo: Using template literals to format strings [14 of 51]
     * Tulostuksessa voi suorittaa "tehtäviä" ${} sisällä, kuten numeroiden yhteenlaskua.
+15. Data types in JavaScript [15 of 51]
+    * JavaScriptissä muuttujien tyyppi voi muuttua kesken koodin.
+16. Demo: Data types in JavaScript [16 of 51]
+    * Data tyyppi kannattaa testata muutamalla tavalla. Aina ei tule oikeaa vastausta. (typeof{muuttuja}, {muuttuja}instanceof {data type})
+17. Math in JavaScript [17 of 51]
+    * ++ lisää yhden, -- vähentää yhden muuttujasta(numero)
+18. Demo: Math in JavaScript [18 of 51]
+    * math objectit esim. Math.PI
+19. 
 
