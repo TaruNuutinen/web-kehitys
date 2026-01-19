@@ -42,5 +42,23 @@
     * ++ lisää yhden, -- vähentää yhden muuttujasta(numero)
 18. Demo: Math in JavaScript [18 of 51]
     * math objectit esim. Math.PI
-19. 
-
+19. Converting strings to numbers [19 of 51]
+    * stringistä numeroksi = parseInt(muuttuja), parseFloat(muuttuja)
+    * numerosta stringiksi = toString()
+20. Demo: Converting strings to numbers [20 of 51]
+    * parseInt tunnistaa esim. Hexadecimalit
+    * Jos muuttuja ei ole numero = NaN
+    * Ei tunnista erikoismerkkejä esim 1+1 tämä onnistuu käyttämällä ${1+1}
+21. Handling errors with try/catch/finally [21 of 51]
+    * Valmistaudutaan erroreihin
+22. Demo: Handling errors with try/catch/finally [22 of 51]
+    * Ohjelma ei pysähdy erroreihin
+23. Dates [23 of 51]
+    * Kuukaudet ja viikonpäivät alkaa nollasta (sunnuntai = 0)
+24. Demo: Dates [24 of 51]
+    * päiväyksilllä on get ja set metodit
+25. Boolean logic with if statements [25 of 51]
+    * == katsoo ovatko muuttujat samanlaisia ja === katsoo ovatko muuttujat samoja myös tyypiltään.
+    * !== käytä tätä, tämä näyttää eron myös tyypissä verrattuna !=
+26. 
+    *
