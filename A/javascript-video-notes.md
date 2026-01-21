@@ -60,5 +60,43 @@
 25. Boolean logic with if statements [25 of 51]
     * == katsoo ovatko muuttujat samanlaisia ja === katsoo ovatko muuttujat samoja myös tyypiltään.
     * !== käytä tätä, tämä näyttää eron myös tyypissä verrattuna !=
-26. 
-    *
+26. Demo: Boolean logic with if statements [26 of 51]
+    * Use === no ==!
+    * Learn shorter way to use
+27. Boolean logic with switch and other syntax [27 of 51]
+    * ||/| = tai, &&/& = ja
+    * syntaxissa on "breaks" ja oikea järjestys.
+28. Demo: Boolean logic with switch and other syntax [28 of 51]
+    * Vältä negatiivista
+    * switch: case ja default(else), muista break!
+29. Creating arrays [29 of 51]
+    * array on lista tai arvojen kokelma
+    * joka arvolla on index
+30. Demo: Creating arrays [30 of 51]
+    * Voit luoda arrayn [] tai Array()
+31. Populating arrays [31 of 51]
+    * No value = Undefined
+    * Index alkaa 0:sta
+32. Demo: Populating arrays [32 of 51]
+    * array.lenght - 1 on viimeisen arvon indexin
+33. Array methods [33 of 51]
+    * array.push() lisää arvon
+    * array.pop() poistaa viimeisen
+    * array.unshift() lisää arvon alkuun
+34. Demo: Array methods [34 of 51]
+    * array.sift() poistaa ensimmäisen arvon
+    * array.concat() liittää arrayhin arrayn 
+35. Loops [35 of 51]
+    * while, for, for ... of
+    * while: muista muuttaa muuttujaa esim. index++
+    * for ... of syntax käy listan läpi puolestani listan
+36. Demo: Loops [36 of 51]
+    * for ... of on helppo ja nopea
+37. Functions [37 of 51]
+    * koodin paloja jota voi käyttää uudestaan ja uudestaan
+    * funktiot lyhentää koodia ja helpottaa muokkaamista
+    * funktioiden nimissä voi käyttää kirjaimia, numeroita, $ ja _
+    * return antaa palautus arvon.
+38. Demo: Functions [38 of 51]
+    * 
+39. 
