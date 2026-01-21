@@ -94,9 +94,46 @@
     * for ... of on helppo ja nopea
 37. Functions [37 of 51]
     * koodin paloja jota voi käyttää uudestaan ja uudestaan
-    * funktiot lyhentää koodia ja helpottaa muokkaamista
+    * funktiot lyhentää koodia ja helpottaa muokkaamista ja lukemista
     * funktioiden nimissä voi käyttää kirjaimia, numeroita, $ ja _
     * return antaa palautus arvon.
 38. Demo: Functions [38 of 51]
-    * 
-39. 
+    * function nimi(){ .. } funktio
+    * kutsu fuktiota: "nimi();"
+    * parameters=input, return=output
+39. Arrow and anonymous functions [39 of 51]
+    * Useammalle riville { .. }
+40. Demo: Arrow and anonymous functions [40 of 51]
+    * esim. const nimi (a, b) => a + b;
+    * jos useampi rivi niin { .. return }
+41. JavaScript Object Notation (JSON) [41 of 51]
+    * nimi-arvo parit tekstimuotoon
+    * .stringify
+    * .parse()
+42. Demo: JavaScript Object Notation (JSON) [42 of 51]
+    * .stringify muuttaa objectin koodista tekstiksi
+    * .parse() saa tekstin objectiksi koodiin
+43. Objects in JavaScript [43 of 51]
+    * objecteilla voi olla myös funktioita
+44. Demo: Objects in JavaScript [44 of 51]
+    * Funktion perässä () suorittaa funktion
+    * this = runtime contents
+45. Promises for long running operations [45 of 51]
+    *.then ja .catch
+46. Demo: Promises for long running operations [46 of 51]
+    * tällä saa synkronoitua koodin funktiot
+47.  Async/await for managing promises [47 of 51]
+    * async/await näyttää synkronoidulta, mutta laittaa funktion pauselle, kunnes toinen funktio on suoritettu.
+    * try/catch hoitaa errorit
+48. Demo: async/await for managing promises [48 of 51]
+    * await voi käyttää vain async sisällä
+    * ilman await, koodi jatkaa suorittamiista vaikka joku funktio olisi kesken.
+49. Package management [49 of 51]
+    * devDependencies = paketit joita tarvitaan vain kehittäessä
+    * Dependencies = paketit joita ohjelma tarvitsee toimiakseen
+50. Demo: Package management [50 of 51]
+    * paketteja ladataan ja käytetään terminaalin kautta
+    * paketteihin voi tehdä lyhenteitä esim. käyttää koodia
+    * paketteja käytetään salaamaan tietoa koodista
+51. Next steps [51 of 51]
+    * I feel ready to start with JavaScript
