@@ -2,14 +2,17 @@
 // 1) DOM references
 // ===============================
 const actions = document.getElementById("resourceActions");
-const resourceNameContainer = document.getElementById("resourceNameContainer");
-const resourceDescriptionContainer = document.getElementById("resourceDescriptionContainer");
-
+const resourceNameCnt = document.getElementById("resourceNameCnt");
+const resourceDescriptionCnt = document.getElementById("resourceDescriptionCnt");
 // Example roles
 const role = "admin"; // "reserver" | "admin"
 
 // Will hold a reference to the Create button so we can enable/disable it
 let createButton = null;
+
+// Resource name and description validation status
+let resourceNameValid = false
+let resourceDescriptionValid = false
 
 // ===============================
 // 2) Button creation helpers
@@ -118,24 +121,6 @@ function createResourceNameInput(container) {
   return input;
 }
 
-function createResourceDescriptionInput(container) {
-  const textarea = document.createElement("textarea");
-  textarea.id = "resourceDescriptionInput";
-  textarea.name = "resourceDescription";
-  textarea.rows = 5;
-  textarea.placeholder =
-    "Describe location, capacity, included equipment, or any usage notes…";
-  textarea.className = ` 
-    mt-2 w-full rounded-2xl border border-black/10 bg-white
-    px-4 py-3 text-sm outline-none 
-    focus:border-brand-blue focus:ring-2 focus:ring-brand-blue/30 
-    transition-all duration-200 ease-out 
-    `;
-
-  container.appendChild(textarea);
-  return textarea;
-}
-
 function isResourceNameValid(value) {
   const trimmed = value.trim();
 
@@ -150,10 +135,35 @@ function isResourceNameValid(value) {
 
 function isResourceDescriptionValid(value) {
   const trimmed = value.trim();
+
+  // Allowed: letters, numbers, Finnish letters, and space (based on your current regex)
   const allowedPattern = /^[a-zA-Z0-9äöåÄÖÅ ]+$/;
+
   const lengthValid = trimmed.length >= 10 && trimmed.length <= 50;
   const charactersValid = allowedPattern.test(trimmed);
+
   return lengthValid && charactersValid;
+}
+
+function createResourceDescriptionArea(container) {
+  const textarea = document.createElement("textarea");
+
+  // Core attributes
+  textarea.id = "resourceDescription";
+  textarea.name = "resourceDescription";
+  textarea.rows = 5;
+  textarea.placeholder =
+    "Describe location, capacity, included equipment, or any usage notes…";
+
+
+  // Base Tailwind styling (single source of truth)
+  textarea.className = `
+    mt-2 w-full rounded-2xl border border-black/10 bg-white px-4 py-3 text-sm outline-none
+    focus:border-brand-blue focus:ring-2 focus:ring-brand-blue/30 transition-all duration-200 ease-out
+  `;
+
+  container.appendChild(textarea);
+  return textarea;
 }
 
 function setInputVisualState(input, state) {
@@ -191,10 +201,12 @@ function attachResourceNameValidation(input) {
       return;
     }
 
-    const valid = isResourceNameValid(raw);
+    //const valid = isResourceNameValid(raw);
+    resourceNameValid = isResourceNameValid(raw);
 
-    setInputVisualState(input, valid ? "valid" : "invalid");
-    updateCreateButtonState();
+    setInputVisualState(input, resourceNameValid ? "valid" : "invalid");
+    //setButtonEnabled(createButton, valid);
+    setButtonEnabled(createButton, resourceNameValid && resourceDescriptionValid);
   };
 
   // Real-time validation
@@ -209,19 +221,24 @@ function attachResourceDescriptionValidation(input) {
     const raw = input.value;
     if (raw.trim() === "") {
       setInputVisualState(input, "neutral");
-      updateCreateButtonState();
+      setButtonEnabled(createButton, false);
       return;
     }
 
-    const valid = isResourceDescriptionValid(raw);
+    //const valid = isResourceDescriptionValid(raw);
+    resourceDescriptionValid = isResourceDescriptionValid(raw);
 
-    setInputVisualState(input, valid ? "valid" : "invalid");
-    updateCreateButtonState();
+    setInputVisualState(input, resourceDescriptionValid ? "valid" : "invalid");
+    setButtonEnabled(createButton, resourceNameValid && resourceDescriptionValid);
   };
 
+  // Real-time validation
   input.addEventListener("input", update);
+
+  // Initialize state on page load (Create disabled until valid)
   update();
 }
+
 
 // ===============================
 // 4) Bootstrapping
@@ -229,13 +246,7 @@ function attachResourceDescriptionValidation(input) {
 renderActionButtons(role);
 
 // Create + validate input
-const resourceNameInput = createResourceNameInput(resourceNameContainer);
-const resourceDescriptionInput = createResourceDescriptionInput(resourceDescriptionContainer);
+const resourceNameInput = createResourceNameInput(resourceNameCnt);
 attachResourceNameValidation(resourceNameInput);
-attachResourceDescriptionValidation(resourceDescriptionInput);
-
-function updateCreateButtonState() {
-  const nameValid = isResourceNameValid(resourceNameInput.value);
-  const descValid = isResourceDescriptionValid(resourceDescriptionInput.value);
-  setButtonEnabled(createButton, nameValid && descValid);
-}
+const resourceDescriptionArea = createResourceDescriptionArea(resourceDescriptionCnt);
+attachResourceDescriptionValidation(resourceDescriptionArea);
