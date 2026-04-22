@@ -43,7 +43,6 @@ sequenceDiagram
     participant U as User (Browser)
     participant F as Frontend (form.js and resources.js)
     participant B as Backend (Express Route)
-    participant V as express-validator
     participant S as Resource Service
     participant DB as PostgreSQL
 
@@ -113,7 +112,6 @@ sequenceDiagram
     participant U as User (Browser)
     participant F as Frontend (form.js and resources.js)
     participant B as Backend (Express Route)
-    participant V as express-validator
     participant S as Resource Service
     participant DB as PostgreSQL
 
@@ -126,5 +124,5 @@ sequenceDiagram
     S-->>B: Deleted resource
     B-->>F: 204 Deleted
     F-->>U: Show success message
-    end
+
 ```
